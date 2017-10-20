@@ -18,4 +18,6 @@ export declare class ChaveAcesso {
     readonly dtEmissaoFormatada: string;
     readonly cnpjFormatado: string;
     readonly UF: string;
+    readonly tipoEmissaoFormatado: string;
+    readonly modeloFormatado: string;
 }

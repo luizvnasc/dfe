@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var modelo_dfe_enum_1 = require("./modelo-dfe.enum");
+var tipo_Emissao_enum_1 = require("./tipo-Emissao.enum");
 var codigo_uf_enum_1 = require("./codigo-uf.enum");
 /**
  * Classe que representa uma chave de acesso de um Documento Fiscal eletrônico.
@@ -41,6 +43,20 @@ var ChaveAcesso = (function () {
         get: function () {
             console.log(+this.cUF);
             return codigo_uf_enum_1.CUF[+this.cUF];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ChaveAcesso.prototype, "tipoEmissaoFormatado", {
+        get: function () {
+            return tipo_Emissao_enum_1.TipoEmissao.toString(+this.tpEmissao);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ChaveAcesso.prototype, "modeloFormatado", {
+        get: function () {
+            return modelo_dfe_enum_1.ModeloDFE[+this.modelo];
         },
         enumerable: true,
         configurable: true

@@ -1,3 +1,5 @@
+import { ModeloDFE } from './modelo-dfe.enum';
+import { TipoEmissao } from './tipo-Emissao.enum';
 import { CUF } from './codigo-uf.enum';
 /**
  * Classe que representa uma chave de acesso de um Documento Fiscal eletrônico.
@@ -39,5 +41,13 @@ export class ChaveAcesso{
   get UF(){
     console.log(+this.cUF)
     return CUF[+this.cUF]
+  }
+
+  get tipoEmissaoFormatado(){
+    return TipoEmissao.toString(+this.tpEmissao);
+  }
+
+  get modeloFormatado(){
+    return ModeloDFE[+this.modelo];
   }
 }

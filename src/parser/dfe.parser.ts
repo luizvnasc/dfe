@@ -6,7 +6,7 @@ import { NFE } from '../model/nfe.model';
 import { DFEValidador } from '../validador/dfe.validador';
 import { StringUtils } from '../utils/string.utils';
 import {ChaveAcesso} from "../model/chave-acesso.model";
-import { Pessoa } from 'model/pessoa.model';
+import { Pessoa } from '../model/pessoa.model';
 import * as _ from 'lodash'
 export class DFEParser {
 
@@ -42,9 +42,10 @@ export class DFEParser {
       dfe.tpNF = data.tpNF;
       dfe.tpEmis = data.tpEmis;
       dfe.tpAmb = data.tpAmb;
-
       let chave = this.parseCh(data.id);
-      switch(+chave.modelo){
+      dfe.modelo = +chave.modelo;
+
+      switch(dfe.modelo){
         case ModeloDFE.NFe:
           return this.parseNFE(dfe,data);
         default:

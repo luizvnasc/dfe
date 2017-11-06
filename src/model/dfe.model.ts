@@ -1,3 +1,4 @@
+import { ModeloDFE } from './modelo-dfe.enum';
 import {TipoEmissao} from './tipo-Emissao.enum';
 import {Situacao} from './situacao.enum';
 /**
@@ -14,7 +15,8 @@ export class DFE {
   tpNF : number; //criar enum;
   tpEmis : TipoEmissao;
   tpAmb : number;
-
+  modelo: ModeloDFE;
+  
   get chaveAcesso() {
     let chaveFormatada = '';
     for (let i = 0; i < 11; i++) {

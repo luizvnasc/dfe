@@ -6,7 +6,7 @@ var dfe_model_1 = require("../model/dfe.model");
 var dfe_validador_1 = require("../validador/dfe.validador");
 var string_utils_1 = require("../utils/string.utils");
 var chave_acesso_model_1 = require("../model/chave-acesso.model");
-var pessoa_model_1 = require("model/pessoa.model");
+var pessoa_model_1 = require("../model/pessoa.model");
 var _ = require("lodash");
 var DFEParser = (function () {
     function DFEParser() {
@@ -43,11 +43,12 @@ var DFEParser = (function () {
             dfe.tpEmis = data.tpEmis;
             dfe.tpAmb = data.tpAmb;
             var chave = this.parseCh(data.id);
-            switch (+chave.modelo) {
+            dfe.modelo = +chave.modelo;
+            switch (dfe.modelo) {
                 case modelo_dfe_enum_1.ModeloDFE.NFe:
                     return this.parseNFE(dfe, data);
                 default:
-                    throw new Error('Modelo não implementado.');
+                    return dfe; //modelo não implementado
             }
         }
         catch (e) {

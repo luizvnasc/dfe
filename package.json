@@ -1,6 +1,6 @@
 {
     "name": "dfe",
-    "version": "1.0.3",
+    "version": "1.0.6",
     "description": "Pacote com definições e validadores de documento fiscal eletrônico para Typescript",
     "main": "index.js",
     "scripts": {

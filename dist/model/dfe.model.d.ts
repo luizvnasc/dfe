@@ -1,3 +1,4 @@
+import { ModeloDFE } from './modelo-dfe.enum';
 import { TipoEmissao } from './tipo-Emissao.enum';
 import { Situacao } from './situacao.enum';
 /**
@@ -14,4 +15,6 @@ export declare class DFE {
     tpNF: number;
     tpEmis: TipoEmissao;
     tpAmb: number;
+    modelo: ModeloDFE;
+    readonly chaveAcesso: string;
 }

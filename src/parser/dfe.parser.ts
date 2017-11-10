@@ -49,7 +49,7 @@ export class DFEParser {
         case ModeloDFE.NFe:
           return this.parseNFE(dfe,data);
         default:
-          throw new Error('Modelo não implementado.');
+          return dfe; //modelo não implementado
       }
     } catch (e){
       throw e;

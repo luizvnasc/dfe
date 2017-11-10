@@ -89,9 +89,9 @@ export class DFEParser {
     destinatario.endereco.uf = data.ufDest;
     
     if(_.isNil(data.cnpjDest) || data.cnpjDest == '' ){
-      emitente.cpfCnpj = data.cpfDest;
+      destinatario.cpfCnpj = data.cpfDest;
     }else{
-      emitente.cpfCnpj = data.cnpjDest;
+      destinatario.cpfCnpj = data.cnpjDest;
     }
     nfe.destinatario = destinatario;
 

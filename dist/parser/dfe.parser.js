@@ -66,11 +66,11 @@ var DFEParser = (function () {
         emitente.endereco.numero = data.nroEmit;
         emitente.endereco.cidade = data.muniEmit;
         emitente.endereco.uf = data.ufEmit;
-        if (_.isNil(data.cnpjEmit) || data.cnpjEmit == '') {
-            emitente.cpfCnpj = data.cpfEmit;
+        if (_.isNil(data.cnpjemit) || data.cnpjemit == '') {
+            emitente.cpfCnpj = data.cpfemit;
         }
-        else if (_.isNil(data.cpfEmit) || data.cpfEmit == '') {
-            emitente.cpfCnpj = data.cnpjEmit;
+        else if (_.isNil(data.cpfemit) || data.cpfemit == '') {
+            emitente.cpfCnpj = data.cnpjemit;
         }
         else {
             emitente.cpfCnpj = undefined;
@@ -84,11 +84,11 @@ var DFEParser = (function () {
         destinatario.endereco.numero = data.nroDest;
         destinatario.endereco.cidade = data.muniDest;
         destinatario.endereco.uf = data.ufDest;
-        if (_.isNil(data.cnpjDest) || data.cnpjDest == '') {
-            destinatario.cpfCnpj = data.cpfDest;
+        if (_.isNil(data.cnpjdest) || data.cnpjdest == '') {
+            destinatario.cpfCnpj = data.cpfdest;
         }
-        else if (_.isNil(data.cpfDest) || data.cpfDest == '') {
-            destinatario.cpfCnpj = data.cnpjDest;
+        else if (_.isNil(data.cpfdest) || data.cpfdest == '') {
+            destinatario.cpfCnpj = data.cnpjdest;
         }
         else {
             destinatario.cpfCnpj = undefined;

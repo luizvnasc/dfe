@@ -73,8 +73,10 @@ export class DFEParser {
     
     if(_.isNil(data.cnpjEmit) || data.cnpjEmit == '' ){
       emitente.cpfCnpj = data.cpfEmit;
-    }else{
+    }else if(_.isNil(data.cpfEmit) || data.cpfEmit == '' ){
       emitente.cpfCnpj = data.cnpjEmit;
+    }else{
+      emitente.cpfCnpj = undefined;
     }
 
     nfe.emitente = emitente;
@@ -90,8 +92,10 @@ export class DFEParser {
     
     if(_.isNil(data.cnpjDest) || data.cnpjDest == '' ){
       destinatario.cpfCnpj = data.cpfDest;
-    }else{
+    }else if(_.isNil(data.cpfDest) || data.cpfDest == ''){
       destinatario.cpfCnpj = data.cnpjDest;
+    }else{
+      destinatario.cpfCnpj = undefined;
     }
     nfe.destinatario = destinatario;
 

@@ -69,8 +69,11 @@ var DFEParser = (function () {
         if (_.isNil(data.cnpjEmit) || data.cnpjEmit == '') {
             emitente.cpfCnpj = data.cpfEmit;
         }
-        else {
+        else if (_.isNil(data.cpfEmit) || data.cpfEmit == '') {
             emitente.cpfCnpj = data.cnpjEmit;
+        }
+        else {
+            emitente.cpfCnpj = undefined;
         }
         nfe.emitente = emitente;
         var destinatario = new pessoa_model_1.Pessoa();
@@ -82,10 +85,13 @@ var DFEParser = (function () {
         destinatario.endereco.cidade = data.muniDest;
         destinatario.endereco.uf = data.ufDest;
         if (_.isNil(data.cnpjDest) || data.cnpjDest == '') {
-            emitente.cpfCnpj = data.cpfDest;
+            destinatario.cpfCnpj = data.cpfDest;
+        }
+        else if (_.isNil(data.cpfDest) || data.cpfDest == '') {
+            destinatario.cpfCnpj = data.cnpjDest;
         }
         else {
-            emitente.cpfCnpj = data.cnpjDest;
+            destinatario.cpfCnpj = undefined;
         }
         nfe.destinatario = destinatario;
         nfe.itens = data.itens;

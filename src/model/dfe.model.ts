@@ -1,3 +1,4 @@
+import { TipoOperacao } from './tipo-operacao.enum';
 import { ModeloDFE } from './modelo-dfe.enum';
 import {TipoEmissao} from './tipo-Emissao.enum';
 import {Situacao} from './situacao.enum';
@@ -12,7 +13,7 @@ export class DFE {
   nNF : string;
   dhEmi : Date;
   dhSaiEnt : Date;
-  tpNF : number; //criar enum;
+  tpNF : TipoOperacao; //criar enum;
   tpEmis : TipoEmissao;
   tpAmb : number;
   modelo: ModeloDFE;

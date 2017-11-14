@@ -39,7 +39,7 @@ var DFEParser = (function () {
             dfe.nNF = data.nNF;
             dfe.dhEmi = data.dhEmi;
             dfe.dhSaiEnt = data.dhSaiEnt;
-            dfe.tpNF = data.tpNF;
+            dfe.tpNF = +data.tpNF;
             dfe.tpEmis = data.tpEmis;
             dfe.tpAmb = data.tpAmb;
             var chave = this.parseCh(data.id);
@@ -57,7 +57,7 @@ var DFEParser = (function () {
     };
     DFEParser.parseNFE = function (dfe, data) {
         var nfe = dfe;
-        nfe.finNFe = data.finNFe;
+        nfe.finNFe = +data.finNFe;
         var emitente = new pessoa_model_1.Pessoa();
         emitente.razaoSocial = data.nomeEmit;
         emitente.endereco = new endereco_model_1.Endereco();

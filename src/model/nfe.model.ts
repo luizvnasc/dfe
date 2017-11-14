@@ -1,3 +1,4 @@
+import { Finalidade } from './finalidade.enum';
 import { Item } from './item.model';
 import { Pessoa } from './pessoa.model';
 import { DFE } from './dfe.model';
@@ -7,7 +8,7 @@ import { DFE } from './dfe.model';
  * @since 27/10/2017
  */
 export class NFE extends DFE{
-  finNFe: string;
+  finNFe: Finalidade;
   emitente: Pessoa;
   destinatario:Pessoa;
   itens: Item[] = [];

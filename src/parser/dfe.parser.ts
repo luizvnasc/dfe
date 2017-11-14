@@ -39,7 +39,7 @@ export class DFEParser {
       dfe.nNF = data.nNF;
       dfe.dhEmi = data.dhEmi;
       dfe.dhSaiEnt = data.dhSaiEnt;
-      dfe.tpNF = data.tpNF;
+      dfe.tpNF = +data.tpNF;
       dfe.tpEmis = data.tpEmis;
       dfe.tpAmb = data.tpAmb;
       let chave = this.parseCh(data.id);
@@ -60,7 +60,7 @@ export class DFEParser {
   private static parseNFE(dfe :DFE,data: any): NFE{
     let nfe  =  <NFE> dfe;
     
-    nfe.finNFe = data.finNFe;
+    nfe.finNFe = +data.finNFe;
     
     let emitente = new Pessoa();
     emitente.razaoSocial = data.nomeEmit;
